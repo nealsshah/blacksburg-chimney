@@ -76,11 +76,7 @@ export default function Home() {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="flex flex-col sm:flex-row gap-4"
             >
-              <Link href="/contact" className="btn-primary group">
-                Get Started
-                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-              </Link>
-              <a href="tel:5402390440" className="btn-secondary">
+              <a href="tel:5402390440" className="btn-primary">
                 <Phone className="mr-2 h-5 w-5" />
                 (540) 239-0440
               </a>
@@ -210,11 +206,7 @@ export default function Home() {
               Contact us anytime for more information.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contact" className="btn-primary group">
-                Contact Us
-                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-              </Link>
-              <a href="tel:5402390440" className="btn-secondary">
+              <a href="tel:5402390440" className="btn-primary">
                 <Phone className="mr-2 h-5 w-5" />
                 (540) 239-0440
               </a>

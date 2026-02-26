@@ -1,8 +1,7 @@
 'use client'
 
-import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { Award, Phone, ArrowRight, MapPin } from 'lucide-react'
+import { Award, Phone, MapPin } from 'lucide-react'
 import { FadeIn, FadeInStagger, FadeInStaggerItem, HoverCard } from '@/components/animations'
 
 const team = [
@@ -145,13 +144,6 @@ export default function AboutPage() {
                       </div>
                       <span className="font-semibold text-lg">(540) 239-0440</span>
                     </a>
-                    <Link
-                      href="/contact"
-                      className="flex items-center justify-center w-full px-6 py-4 bg-white text-primary-600 font-semibold rounded-xl hover:bg-primary-50 transition-colors group"
-                    >
-                      Contact Us
-                      <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                    </Link>
                   </div>
                 </div>
               </div>
