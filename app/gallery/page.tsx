@@ -18,6 +18,21 @@ const photos = [
   '/Image 3120087.jpg',
   '/Image 3120089.jpg',
   '/Image 3120096.jpg',
+  '/Facebook Image.jpg',
+  '/Facebook Image copy.jpg',
+  '/Facebook Image (1).jpg',
+  '/Facebook Image (1) copy.jpg',
+  '/Facebook Image (2).jpg',
+  '/Facebook Image (3).jpg',
+  '/Facebook Image (4).jpg',
+  '/Facebook Image (5).jpg',
+  '/Facebook Image (6).jpg',
+  '/Facebook Image (7).jpg',
+  '/Facebook Image (8).jpg',
+  '/Facebook Image (9).jpg',
+  '/Facebook Image (10).jpg',
+  '/Facebook Image (11).jpg',
+  '/Facebook Image (12).jpg',
 ]
 
 export default function GalleryPage() {
@@ -44,7 +59,7 @@ export default function GalleryPage() {
       {/* Gallery Grid */}
       <section className="bg-warm-50 section-padding">
         <div className="container-custom">
-          <GalleryLightbox photos={photos} />
+          <GalleryLightbox photos={[...photos].reverse()} />
         </div>
       </section>
 

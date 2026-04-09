@@ -72,7 +72,7 @@ export default function ServicesPage() {
                   </div>
                 </div>
                 <div>
-                  <h3 className="heading text-2xl text-white mb-2">CSIA Certified &bull; BBB Accredited</h3>
+                  <h3 className="heading text-2xl text-white mb-2"><a href="https://search.csia.org/company_profile/-blacksburg-chimney-servicesalan-the-chimney-swift" target="_blank" rel="noopener noreferrer" className="hover:text-primary-300 transition-colors">CSIA Certified</a> &bull; <a href="https://www.bbb.org/us/va/roanoke/profile/chimney-cleaning/blacksburg-chimney-services-alan-the-chimney-swift-0613-9009080" target="_blank" rel="noopener noreferrer" className="hover:text-primary-300 transition-colors">BBB Accredited</a></h3>
                   <p className="text-warm-300 leading-relaxed">
                     Blacksburg Chimney Services employs 3 CSIA certified professionals with over 48 years of combined experience. We are a BBB accredited business committed to safety and quality.
                   </p>

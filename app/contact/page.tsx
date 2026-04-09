@@ -90,20 +90,20 @@ export default function ContactPage() {
             <FadeIn delay={0.2}>
               <div className="bg-warm-900 rounded-xl p-6 grain relative overflow-hidden">
                 <div className="relative z-10 flex flex-col sm:flex-row gap-4">
-                  <div className="flex items-center gap-3 flex-1">
+                  <a href="https://search.csia.org/company_profile/-blacksburg-chimney-servicesalan-the-chimney-swift" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 flex-1 hover:opacity-80 transition-opacity">
                     <Award className="h-6 w-6 text-primary-400 flex-shrink-0" />
                     <div>
                       <p className="text-white font-bold text-sm">CSIA Certified</p>
                       <p className="text-warm-400 text-xs">3 Certified Professionals</p>
                     </div>
-                  </div>
-                  <div className="flex items-center gap-3 flex-1">
+                  </a>
+                  <a href="https://www.bbb.org/us/va/roanoke/profile/chimney-cleaning/blacksburg-chimney-services-alan-the-chimney-swift-0613-9009080" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 flex-1 hover:opacity-80 transition-opacity">
                     <Shield className="h-6 w-6 text-primary-400 flex-shrink-0" />
                     <div>
                       <p className="text-white font-bold text-sm">BBB Accredited</p>
                       <p className="text-warm-400 text-xs">Trusted Business</p>
                     </div>
-                  </div>
+                  </a>
                 </div>
               </div>
             </FadeIn>

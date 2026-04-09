@@ -44,14 +44,14 @@ export default function Footer() {
               Chimney Sweeping, Repairs & Installations
             </p>
             <div className="space-y-2.5">
-              <div className="flex items-center gap-2 text-sm text-warm-300">
+              <a href="https://search.csia.org/company_profile/-blacksburg-chimney-servicesalan-the-chimney-swift" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-warm-300 hover:text-primary-400 transition-colors">
                 <Award className="h-4 w-4 text-primary-500 flex-shrink-0" />
                 <span className="font-semibold">3 CSIA Certified Professionals</span>
-              </div>
-              <div className="flex items-center gap-2 text-sm text-warm-300">
+              </a>
+              <a href="https://www.bbb.org/us/va/roanoke/profile/chimney-cleaning/blacksburg-chimney-services-alan-the-chimney-swift-0613-9009080" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-warm-300 hover:text-primary-400 transition-colors">
                 <Shield className="h-4 w-4 text-primary-500 flex-shrink-0" />
                 <span className="font-semibold">BBB Accredited Business</span>
-              </div>
+              </a>
             </div>
           </div>
 

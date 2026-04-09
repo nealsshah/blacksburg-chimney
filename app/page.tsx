@@ -59,6 +59,10 @@ export default function Home() {
               Chimney Sweeping, Repairs & Installations
             </p>
 
+            <p className="text-warm-300 text-base md:text-lg mb-3">
+              Serving the New River Valley and beyond
+            </p>
+
             <p className="text-primary-400 font-bold text-base md:text-lg tracking-wide uppercase mb-10">
               3 CSIA Certified Pros &bull; BBB Accredited &bull; 48+ Years
             </p>
@@ -82,15 +86,15 @@ export default function Home() {
       <section className="bg-warm-900 text-warm-50 py-5">
         <div className="container-custom px-5">
           <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-10 text-center">
-            <div className="flex items-center gap-2">
+            <a href="https://search.csia.org/company_profile/-blacksburg-chimney-servicesalan-the-chimney-swift" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-primary-400 transition-colors">
               <Award className="h-5 w-5 text-primary-400" />
               <span className="font-bold tracking-wide text-sm uppercase">CSIA Certified</span>
-            </div>
+            </a>
             <div className="hidden md:block w-px h-5 bg-warm-700" />
-            <div className="flex items-center gap-2">
+            <a href="https://www.bbb.org/us/va/roanoke/profile/chimney-cleaning/blacksburg-chimney-services-alan-the-chimney-swift-0613-9009080" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-primary-400 transition-colors">
               <Shield className="h-5 w-5 text-primary-400" />
               <span className="font-bold tracking-wide text-sm uppercase">BBB Accredited</span>
-            </div>
+            </a>
             <div className="hidden md:block w-px h-5 bg-warm-700" />
             <div className="flex items-center gap-2">
               <CheckCircle className="h-5 w-5 text-primary-400" />
@@ -145,7 +149,7 @@ export default function Home() {
               Quality Work Guaranteed
             </h2>
             <p className="text-primary-100 text-lg mb-10 max-w-xl mx-auto">
-              CSIA Certified &bull; BBB Accredited &bull; Serving the New River Valley
+              <a href="https://search.csia.org/company_profile/-blacksburg-chimney-servicesalan-the-chimney-swift" target="_blank" rel="noopener noreferrer" className="underline hover:text-white transition-colors">CSIA Certified</a> &bull; <a href="https://www.bbb.org/us/va/roanoke/profile/chimney-cleaning/blacksburg-chimney-services-alan-the-chimney-swift-0613-9009080" target="_blank" rel="noopener noreferrer" className="underline hover:text-white transition-colors">BBB Accredited</a> &bull; Serving the New River Valley
             </p>
             <a href="tel:5402390440" className="inline-flex items-center gap-3 bg-white text-warm-900 text-xl md:text-2xl font-bold px-10 py-5 rounded-lg shadow-xl hover:shadow-2xl transition-all duration-200 hover:-translate-y-1">
               <Phone className="h-6 w-6" />

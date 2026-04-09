@@ -61,7 +61,7 @@ export default function AboutPage() {
           <div className="flex flex-col md:flex-row items-center justify-center gap-4 text-center">
             <Award className="h-6 w-6 flex-shrink-0" />
             <p className="font-bold tracking-wide text-sm uppercase">
-              3 CSIA Certified Chimney Sweep Professionals &mdash; BBB Accredited Business
+              <a href="https://search.csia.org/company_profile/-blacksburg-chimney-servicesalan-the-chimney-swift" target="_blank" rel="noopener noreferrer" className="underline hover:text-primary-100 transition-colors">3 CSIA Certified</a> Chimney Sweep Professionals &mdash; <a href="https://www.bbb.org/us/va/roanoke/profile/chimney-cleaning/blacksburg-chimney-services-alan-the-chimney-swift-0613-9009080" target="_blank" rel="noopener noreferrer" className="underline hover:text-primary-100 transition-colors">BBB Accredited</a> Business
             </p>
           </div>
         </div>
