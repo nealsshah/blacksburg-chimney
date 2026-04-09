@@ -49,12 +49,18 @@ export default function Footer() {
                 <div className="text-xs text-slate-400 tracking-wide">CHIMNEY SERVICES</div>
               </div>
             </Link>
-            <p className="text-slate-400 text-sm mb-6 leading-relaxed">
+            <p className="text-slate-400 text-sm mb-4 leading-relaxed">
               Chimney Sweeping, Repairs & Installations
             </p>
-            <div className="flex items-center gap-2 text-sm text-slate-400">
-              <Shield className="h-4 w-4 text-primary-500" />
-              CSIA Certified Professionals
+            <div className="space-y-2">
+              <div className="flex items-center gap-2 text-sm text-slate-400">
+                <Shield className="h-4 w-4 text-primary-500" />
+                3 CSIA Certified Professionals
+              </div>
+              <div className="flex items-center gap-2 text-sm text-slate-400">
+                <Shield className="h-4 w-4 text-primary-500" />
+                BBB Accredited Business
+              </div>
             </div>
           </div>
 

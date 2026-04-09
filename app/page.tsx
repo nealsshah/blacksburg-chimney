@@ -1,8 +1,9 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { motion } from 'framer-motion'
-import { Phone, Shield, ArrowRight, Flame, Sparkles, Wrench, Quote } from 'lucide-react'
+import { Phone, Shield, ArrowRight, Flame, Sparkles, Wrench, Quote, Award, CheckCircle } from 'lucide-react'
 import { FadeIn, FadeInStagger, FadeInStaggerItem, HoverCard } from '@/components/animations'
 
 const services = [
@@ -29,32 +30,32 @@ const services = [
 export default function Home() {
   return (
     <>
-      {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center animated-gradient text-white overflow-hidden">
-        {/* Animated background elements */}
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-1/4 -left-20 w-72 h-72 bg-primary-500/20 rounded-full blur-3xl float" />
-          <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-primary-600/10 rounded-full blur-3xl float" style={{ animationDelay: '2s' }} />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-radial from-primary-500/5 to-transparent rounded-full" />
+      {/* Hero Section - Full width image with centered contact info */}
+      <section className="relative min-h-screen flex items-center text-white overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <Image
+            src="/Image 3120054.jpg"
+            alt="Blacksburg Chimney Services professional chimney work"
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-black/60" />
         </div>
 
-        <div className="container-custom section-padding relative pt-32">
-          <div className="max-w-4xl">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="inline-flex items-center gap-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full px-5 py-2.5 mb-8"
-            >
-              <div className="w-2 h-2 bg-primary-500 rounded-full animate-pulse" />
-              <span className="text-sm text-slate-300 font-medium">CSIA Certified Professionals</span>
-            </motion.div>
-
+        <div className="container-custom relative z-10 text-center mx-auto pt-32 pb-20">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="max-w-3xl mx-auto"
+          >
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-[1.1] tracking-tight"
+              className="text-5xl md:text-6xl lg:text-7xl font-bold mb-4 leading-[1.1] tracking-tight"
             >
               Blacksburg{' '}
               <span className="gradient-text">Chimney</span>{' '}
@@ -65,61 +66,69 @@ export default function Home() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-xl md:text-2xl text-slate-400 mb-10 max-w-2xl leading-relaxed"
+              className="text-xl md:text-2xl text-slate-200 mb-4 leading-relaxed"
             >
-              Chimney Sweeping, Repairs & Installations
+              Professional Chimney Sweeping, Repairs & Installations
+            </motion.p>
+
+            <motion.p
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.25 }}
+              className="text-lg text-primary-400 font-semibold mb-8"
+            >
+              3 CSIA Certified Professionals on Staff &bull; BBB Accredited Business
             </motion.p>
 
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="flex flex-col sm:flex-row gap-4"
+              className="flex flex-col sm:flex-row gap-4 justify-center mb-10"
             >
-              <a href="tel:5402390440" className="btn-primary">
-                <Phone className="mr-2 h-5 w-5" />
+              <a href="tel:5402390440" className="btn-primary text-lg px-8 py-4">
+                <Phone className="mr-2 h-6 w-6" />
                 (540) 239-0440
               </a>
+              <Link href="/contact" className="btn-secondary text-lg px-8 py-4">
+                Get a Free Estimate
+              </Link>
             </motion.div>
 
-            {/* Trust indicators */}
+            {/* Trust badges */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.5 }}
-              className="flex flex-wrap items-center gap-6 mt-16 pt-8 border-t border-white/10"
+              className="flex flex-wrap items-center justify-center gap-6 pt-6 border-t border-white/20"
             >
-              <div className="flex items-center gap-2">
-                <Shield className="h-5 w-5 text-primary-500" />
-                <span className="text-sm text-slate-400">CSIA Certified</span>
+              <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2">
+                <Award className="h-5 w-5 text-primary-400" />
+                <span className="text-sm font-medium">CSIA Certified</span>
               </div>
-              <div className="flex items-center gap-2">
-                <Shield className="h-5 w-5 text-primary-500" />
-                <span className="text-sm text-slate-400">BBB Accredited</span>
+              <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2">
+                <Shield className="h-5 w-5 text-primary-400" />
+                <span className="text-sm font-medium">BBB Accredited</span>
               </div>
-              <div className="flex items-center gap-2">
-                <Shield className="h-5 w-5 text-primary-500" />
-                <span className="text-sm text-slate-400">48+ Years Experience</span>
+              <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2">
+                <CheckCircle className="h-5 w-5 text-primary-400" />
+                <span className="text-sm font-medium">48+ Years Experience</span>
               </div>
             </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* CSIA Certification Banner */}
+      <section className="bg-primary-600 text-white py-6">
+        <div className="container-custom">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-4 text-center">
+            <Award className="h-8 w-8 flex-shrink-0" />
+            <p className="text-lg font-semibold">
+              Proudly employing 3 CSIA Certified Chimney Sweep Professionals &mdash; Your safety is our top priority
+            </p>
           </div>
         </div>
-
-        {/* Scroll indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1 }}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2"
-        >
-          <motion.div
-            animate={{ y: [0, 10, 0] }}
-            transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
-            className="w-6 h-10 rounded-full border-2 border-white/30 flex items-start justify-center p-2"
-          >
-            <motion.div className="w-1.5 h-1.5 bg-white rounded-full" />
-          </motion.div>
-        </motion.div>
       </section>
 
       {/* Services Section */}
@@ -171,7 +180,7 @@ export default function Home() {
               <div className="relative">
                 <Quote className="absolute -top-4 -left-4 h-20 w-20 text-primary-100" />
                 <blockquote className="relative text-3xl md:text-4xl font-medium text-slate-900 mb-8 leading-relaxed">
-                  "Superb product and customer service!"
+                  &ldquo;Superb product and customer service!&rdquo;
                 </blockquote>
               </div>
 
@@ -202,6 +211,9 @@ export default function Home() {
               Quality Work{' '}
               <span className="gradient-text">Guaranteed</span>
             </h2>
+            <p className="text-lg text-slate-300 mb-2">
+              CSIA Certified &bull; BBB Accredited &bull; 48+ Years Experience
+            </p>
             <p className="text-xl text-slate-400 mb-10">
               Contact us anytime for more information.
             </p>

@@ -1,47 +1,19 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import {
-  Sparkles,
-  Wrench,
-  Flame,
-  Camera,
-  Wind,
-  Shield,
-  Home,
-  Layers,
-  Phone,
-} from 'lucide-react'
-import { FadeIn, FadeInStagger, FadeInStaggerItem, HoverCard } from '@/components/animations'
+import { Phone, Award, CheckCircle } from 'lucide-react'
+import { FadeIn } from '@/components/animations'
 
 const services = [
-  { icon: Sparkles, title: 'Chimney Sweeping' },
-  { icon: Layers, title: 'Chimney Relining' },
-  { icon: Wrench, title: 'Chimney Repairs' },
-  { icon: Shield, title: 'Copper Flashing' },
-  { icon: Home, title: 'Caps' },
-  { icon: Flame, title: 'Woodstove Installation' },
-  { icon: Wrench, title: 'Woodstove Repairs' },
-  { icon: Camera, title: 'Video Inspection' },
-  { icon: Wind, title: 'Dryer Vent Cleaning & Repairs' },
-]
-
-const process = [
-  {
-    icon: Sparkles,
-    title: 'Clean',
-    description: 'BCS comes to your home on your schedule and leaves your chimney clean and ready for use.',
-  },
-  {
-    icon: Wrench,
-    title: 'Repair',
-    description: 'BCS will repair any issues we find, but first you will receive a quote in writing before work begins.',
-  },
-  {
-    icon: Flame,
-    title: 'Install',
-    description: 'Some homes may need an upgraded liner if the chimney materials have degraded or been abused.',
-  },
+  'Chimney Sweeping',
+  'Chimney Relining',
+  'Chimney Repairs',
+  'Copper Flashing',
+  'Caps',
+  'Woodstove Installation',
+  'Woodstove Repairs',
+  'Video Inspection',
+  'Dryer Vent Cleaning & Repairs',
 ]
 
 export default function ServicesPage() {
@@ -67,59 +39,55 @@ export default function ServicesPage() {
               <span className="gradient-text">Offer</span>
             </h1>
             <p className="text-xl text-slate-400 leading-relaxed">
-              CSIA certified chimney sweeping, repairs, and installations.
+              All services performed by CSIA certified professionals.
             </p>
           </motion.div>
         </div>
       </section>
 
-      {/* Services Grid */}
+      {/* Services List */}
       <section className="bg-white section-padding">
-        <div className="container-custom">
-          <FadeInStagger className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {services.map((service, index) => (
-              <FadeInStaggerItem key={service.title}>
-                <HoverCard>
-                  <div className="bg-slate-50 rounded-2xl p-6 hover:bg-slate-100 transition-all duration-300 border border-transparent hover:border-primary-200 group">
-                    <div className="flex items-center gap-4">
-                      <div className="w-14 h-14 bg-gradient-to-br from-primary-500 to-primary-600 rounded-xl flex items-center justify-center shadow-lg shadow-primary-500/20 group-hover:shadow-primary-500/30 transition-shadow">
-                        <service.icon className="h-7 w-7 text-white" />
-                      </div>
-                      <h3 className="text-lg font-semibold text-slate-900">{service.title}</h3>
-                    </div>
-                  </div>
-                </HoverCard>
-              </FadeInStaggerItem>
-            ))}
-          </FadeInStagger>
+        <div className="container-custom max-w-3xl">
+          <FadeIn>
+            <div className="space-y-4">
+              {services.map((service, index) => (
+                <motion.div
+                  key={service}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.05 }}
+                  className="flex items-center gap-4 bg-slate-50 px-6 py-5 rounded-xl border border-slate-100 hover:border-primary-200 hover:shadow-md transition-all"
+                >
+                  <CheckCircle className="h-6 w-6 text-primary-500 flex-shrink-0" />
+                  <span className="text-lg font-medium text-slate-900">{service}</span>
+                </motion.div>
+              ))}
+            </div>
+          </FadeIn>
         </div>
       </section>
 
-      {/* Process Section */}
+      {/* Certification Banner */}
       <section className="bg-slate-50 section-padding">
         <div className="container-custom">
-          <FadeIn className="text-center max-w-2xl mx-auto mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
-              Our Process
-            </h2>
-          </FadeIn>
-
-          <FadeInStagger className="grid md:grid-cols-3 gap-8">
-            {process.map((item, index) => (
-              <FadeInStaggerItem key={item.title}>
-                <motion.div
-                  whileHover={{ y: -8 }}
-                  className="bg-white rounded-3xl p-8 text-center shadow-sm hover:shadow-xl transition-all duration-500 border border-slate-100"
-                >
-                  <div className="w-20 h-20 bg-gradient-to-br from-primary-500 to-primary-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg shadow-primary-500/25">
-                    <item.icon className="h-10 w-10 text-white" />
+          <FadeIn>
+            <div className="max-w-3xl mx-auto bg-white rounded-3xl p-10 border border-slate-100 shadow-sm">
+              <div className="flex flex-col md:flex-row items-center gap-6 text-center md:text-left">
+                <div className="flex-shrink-0">
+                  <div className="w-20 h-20 bg-gradient-to-br from-primary-500 to-primary-600 rounded-2xl flex items-center justify-center shadow-lg shadow-primary-500/25">
+                    <Award className="h-10 w-10 text-white" />
                   </div>
-                  <h3 className="text-2xl font-bold text-slate-900 mb-4">{item.title}</h3>
-                  <p className="text-slate-600 leading-relaxed">{item.description}</p>
-                </motion.div>
-              </FadeInStaggerItem>
-            ))}
-          </FadeInStagger>
+                </div>
+                <div>
+                  <h3 className="text-2xl font-bold text-slate-900 mb-2">CSIA Certified &bull; BBB Accredited</h3>
+                  <p className="text-slate-600 leading-relaxed">
+                    Blacksburg Chimney Services proudly employs 3 CSIA certified professionals with over 48 years of combined experience. We are a BBB accredited business committed to safety and quality.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </FadeIn>
         </div>
       </section>
 

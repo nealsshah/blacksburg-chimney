@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Award, Phone, MapPin } from 'lucide-react'
+import { Award, Phone, MapPin, Shield } from 'lucide-react'
 import { FadeIn, FadeInStagger, FadeInStaggerItem, HoverCard } from '@/components/animations'
 
 const team = [
@@ -59,10 +59,19 @@ export default function AboutPage() {
               Meet the{' '}
               <span className="gradient-text">Team</span>
             </h1>
-            <p className="text-xl text-slate-400 leading-relaxed">
-              CSIA certified chimney sweeping, repairs, and installations serving the New River Valley.
-            </p>
           </motion.div>
+        </div>
+      </section>
+
+      {/* CSIA Certification Highlight */}
+      <section className="bg-primary-600 text-white py-6">
+        <div className="container-custom">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-4 text-center">
+            <Award className="h-8 w-8 flex-shrink-0" />
+            <p className="text-lg font-semibold">
+              3 CSIA Certified Chimney Sweep Professionals &mdash; BBB Accredited Business
+            </p>
+          </div>
         </div>
       </section>
 
@@ -82,7 +91,10 @@ export default function AboutPage() {
                     <h3 className="text-xl font-bold text-slate-900">{member.name}</h3>
                     <p className="text-primary-600 font-medium">{member.title}</p>
                     {member.certification && (
-                      <p className="text-sm text-slate-500 mt-1">{member.certification}</p>
+                      <div className="inline-flex items-center gap-1.5 bg-primary-50 text-primary-700 px-3 py-1 rounded-full mt-2 text-sm font-medium">
+                        <Shield className="h-3.5 w-3.5" />
+                        {member.certification}
+                      </div>
                     )}
                     <div className="inline-flex items-center gap-2 bg-white px-4 py-2 rounded-full mt-4 shadow-sm">
                       <Award className="h-4 w-4 text-primary-500" />

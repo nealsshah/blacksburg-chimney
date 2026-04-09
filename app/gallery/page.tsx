@@ -35,15 +35,11 @@ export default function GalleryPage() {
             transition={{ duration: 0.6 }}
             className="max-w-3xl"
           >
-            <div className="inline-flex items-center gap-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full px-5 py-2.5 mb-6">
-              <span className="text-sm text-slate-300 font-medium">Gallery</span>
-            </div>
             <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-              Our Adventure{' '}
-              <span className="gradient-text">Stories</span>
+              <span className="gradient-text">Gallery</span>
             </h1>
             <p className="text-xl text-slate-400 leading-relaxed">
-              Get access now to a collection of chimney photographs that detail our work in time featuring photographs from local customers in your neighborhood.
+              A collection of photographs showcasing our work for local customers in your neighborhood.
             </p>
           </motion.div>
         </div>
