@@ -34,7 +34,7 @@ export default function Home() {
       <section className="relative min-h-screen flex items-center overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/Image 3120054.jpg"
+            src="/Landing Page Background Apr 9 2026.png"
             alt="Blacksburg Chimney Services professional chimney work"
             fill
             className="object-cover"
