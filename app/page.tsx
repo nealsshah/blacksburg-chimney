@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
-import { Phone, Shield, ArrowRight, Sparkles, Wrench, Flame, Quote, Award, CheckCircle } from 'lucide-react'
+import { Phone, Shield, ArrowRight, Sparkles, Wrench, Flame, Award, CheckCircle } from 'lucide-react'
 import { FadeIn, FadeInStagger, FadeInStaggerItem, HoverCard } from '@/components/animations'
 
 const services = [
@@ -134,29 +134,6 @@ export default function Home() {
               </FadeInStaggerItem>
             ))}
           </FadeInStagger>
-        </div>
-      </section>
-
-      {/* Testimonial */}
-      <section className="relative bg-warm-900 text-white section-padding grain overflow-hidden">
-        <div className="container-custom relative z-10">
-          <FadeIn>
-            <div className="max-w-3xl mx-auto text-center">
-              <Quote className="h-16 w-16 text-primary-500/30 mx-auto mb-6" />
-              <blockquote className="heading text-3xl md:text-4xl lg:text-5xl text-white mb-8 leading-tight">
-                &ldquo;Superb product and customer service!&rdquo;
-              </blockquote>
-              <div className="flex items-center justify-center gap-4">
-                <div className="w-12 h-12 bg-primary-600 rounded-full flex items-center justify-center text-white font-bold">
-                  JM
-                </div>
-                <div className="text-left">
-                  <p className="font-bold text-warm-100">Jo Mulligan</p>
-                  <p className="text-warm-400 text-sm">Blacksburg, VA</p>
-                </div>
-              </div>
-            </div>
-          </FadeIn>
         </div>
       </section>
 

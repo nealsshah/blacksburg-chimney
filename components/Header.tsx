@@ -43,9 +43,9 @@ export default function Header() {
             <Image
               src="/bcs-logo.png"
               alt="Blacksburg Chimney Services"
-              width={160}
-              height={56}
-              className="h-12 w-auto brightness-0 invert"
+              width={240}
+              height={84}
+              className="h-20 w-auto brightness-0 invert"
               priority
             />
           </Link>
