@@ -19,26 +19,18 @@ const services = [
 export default function ServicesPage() {
   return (
     <>
-      {/* Hero Section */}
-      <section className="relative animated-gradient text-white pt-32 pb-20 overflow-hidden">
-        <div className="absolute inset-0">
-          <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-primary-500/20 rounded-full blur-3xl" />
-        </div>
-        <div className="container-custom section-padding relative">
+      {/* Hero */}
+      <section className="relative bg-warm-900 text-white pt-32 pb-16 grain overflow-hidden">
+        <div className="container-custom section-padding relative z-10">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="max-w-3xl"
+            transition={{ duration: 0.5 }}
           >
-            <div className="inline-flex items-center gap-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full px-5 py-2.5 mb-6">
-              <span className="text-sm text-slate-300 font-medium">Our Services</span>
-            </div>
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-              What We{' '}
-              <span className="gradient-text">Offer</span>
+            <h1 className="heading text-5xl md:text-6xl lg:text-7xl text-white mb-4">
+              Our Services
             </h1>
-            <p className="text-xl text-slate-400 leading-relaxed">
+            <p className="text-lg text-warm-400 max-w-xl">
               All services performed by CSIA certified professionals.
             </p>
           </motion.div>
@@ -46,21 +38,21 @@ export default function ServicesPage() {
       </section>
 
       {/* Services List */}
-      <section className="bg-white section-padding">
+      <section className="bg-warm-50 section-padding">
         <div className="container-custom max-w-3xl">
           <FadeIn>
-            <div className="space-y-4">
+            <div className="space-y-3">
               {services.map((service, index) => (
                 <motion.div
                   key={service}
-                  initial={{ opacity: 0, x: -20 }}
+                  initial={{ opacity: 0, x: -15 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: index * 0.05 }}
-                  className="flex items-center gap-4 bg-slate-50 px-6 py-5 rounded-xl border border-slate-100 hover:border-primary-200 hover:shadow-md transition-all"
+                  transition={{ delay: index * 0.04 }}
+                  className="flex items-center gap-4 bg-white px-6 py-5 rounded-lg border border-warm-200 hover:border-primary-300 transition-colors"
                 >
-                  <CheckCircle className="h-6 w-6 text-primary-500 flex-shrink-0" />
-                  <span className="text-lg font-medium text-slate-900">{service}</span>
+                  <CheckCircle className="h-6 w-6 text-primary-600 flex-shrink-0" />
+                  <span className="text-lg font-semibold text-warm-900">{service}</span>
                 </motion.div>
               ))}
             </div>
@@ -68,21 +60,21 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Certification Banner */}
-      <section className="bg-slate-50 section-padding">
+      {/* Certification */}
+      <section className="bg-white section-padding">
         <div className="container-custom">
           <FadeIn>
-            <div className="max-w-3xl mx-auto bg-white rounded-3xl p-10 border border-slate-100 shadow-sm">
-              <div className="flex flex-col md:flex-row items-center gap-6 text-center md:text-left">
+            <div className="max-w-3xl mx-auto bg-warm-900 rounded-xl p-10 grain relative overflow-hidden">
+              <div className="relative z-10 flex flex-col md:flex-row items-center gap-6 text-center md:text-left">
                 <div className="flex-shrink-0">
-                  <div className="w-20 h-20 bg-gradient-to-br from-primary-500 to-primary-600 rounded-2xl flex items-center justify-center shadow-lg shadow-primary-500/25">
+                  <div className="w-20 h-20 bg-primary-600 rounded-lg flex items-center justify-center">
                     <Award className="h-10 w-10 text-white" />
                   </div>
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold text-slate-900 mb-2">CSIA Certified &bull; BBB Accredited</h3>
-                  <p className="text-slate-600 leading-relaxed">
-                    Blacksburg Chimney Services proudly employs 3 CSIA certified professionals with over 48 years of combined experience. We are a BBB accredited business committed to safety and quality.
+                  <h3 className="heading text-2xl text-white mb-2">CSIA Certified &bull; BBB Accredited</h3>
+                  <p className="text-warm-300 leading-relaxed">
+                    Blacksburg Chimney Services employs 3 CSIA certified professionals with over 48 years of combined experience. We are a BBB accredited business committed to safety and quality.
                   </p>
                 </div>
               </div>
@@ -91,28 +83,20 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="relative bg-slate-900 text-white section-padding overflow-hidden">
-        <div className="absolute inset-0">
-          <div className="absolute top-0 right-1/4 w-96 h-96 bg-primary-500/20 rounded-full blur-3xl" />
-          <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-primary-600/10 rounded-full blur-3xl" />
-        </div>
-
-        <div className="container-custom relative">
-          <FadeIn className="text-center max-w-3xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Quality Work{' '}
-              <span className="gradient-text">Guaranteed</span>
+      {/* CTA */}
+      <section className="bg-primary-600 text-white section-padding relative grain overflow-hidden">
+        <div className="container-custom relative z-10 text-center">
+          <FadeIn>
+            <h2 className="heading text-4xl md:text-5xl mb-4">
+              Quality Work Guaranteed
             </h2>
-            <p className="text-xl text-slate-400 mb-10">
+            <p className="text-primary-100 text-lg mb-10">
               Contact us anytime for more information.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="tel:5402390440" className="btn-primary">
-                <Phone className="mr-2 h-5 w-5" />
-                (540) 239-0440
-              </a>
-            </div>
+            <a href="tel:5402390440" className="inline-flex items-center gap-3 bg-white text-warm-900 text-xl font-bold px-10 py-5 rounded-lg shadow-xl hover:shadow-2xl transition-all duration-200 hover:-translate-y-1">
+              <Phone className="h-6 w-6" />
+              (540) 239-0440
+            </a>
           </FadeIn>
         </div>
       </section>

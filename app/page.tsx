@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
-import { Phone, Shield, ArrowRight, Flame, Sparkles, Wrench, Quote, Award, CheckCircle } from 'lucide-react'
+import { Phone, Shield, ArrowRight, Sparkles, Wrench, Flame, Quote, Award, CheckCircle } from 'lucide-react'
 import { FadeIn, FadeInStagger, FadeInStaggerItem, HoverCard } from '@/components/animations'
 
 const services = [
@@ -30,9 +30,8 @@ const services = [
 export default function Home() {
   return (
     <>
-      {/* Hero Section - Full width image with centered contact info */}
-      <section className="relative min-h-screen flex items-center text-white overflow-hidden">
-        {/* Background Image */}
+      {/* Hero — Big image, centered contact info */}
+      <section className="relative min-h-screen flex items-center overflow-hidden">
         <div className="absolute inset-0">
           <Image
             src="/Image 3120054.jpg"
@@ -41,121 +40,91 @@ export default function Home() {
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-black/60" />
+          <div className="absolute inset-0 bg-gradient-to-b from-warm-950/70 via-warm-950/60 to-warm-950/80" />
         </div>
 
-        <div className="container-custom relative z-10 text-center mx-auto pt-32 pb-20">
+        <div className="container-custom relative z-10 text-center mx-auto pt-32 pb-20 px-5">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="max-w-3xl mx-auto"
+            transition={{ duration: 0.5 }}
+            className="max-w-4xl mx-auto"
           >
-            <motion.h1
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-5xl md:text-6xl lg:text-7xl font-bold mb-4 leading-[1.1] tracking-tight"
-            >
-              Blacksburg{' '}
-              <span className="gradient-text">Chimney</span>{' '}
-              Services
-            </motion.h1>
+            <h1 className="heading text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-white mb-6">
+              Blacksburg<br />
+              <span className="text-primary-400">Chimney Services</span>
+            </h1>
 
-            <motion.p
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-xl md:text-2xl text-slate-200 mb-4 leading-relaxed"
-            >
-              Professional Chimney Sweeping, Repairs & Installations
-            </motion.p>
+            <p className="text-lg md:text-xl text-warm-200 mb-3 font-medium">
+              Chimney Sweeping, Repairs & Installations
+            </p>
 
-            <motion.p
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.25 }}
-              className="text-lg text-primary-400 font-semibold mb-8"
-            >
-              3 CSIA Certified Professionals on Staff &bull; BBB Accredited Business
-            </motion.p>
+            <p className="text-primary-400 font-bold text-base md:text-lg tracking-wide uppercase mb-10">
+              3 CSIA Certified Pros &bull; BBB Accredited &bull; 48+ Years
+            </p>
 
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="flex flex-col sm:flex-row gap-4 justify-center mb-10"
+            {/* Phone number — THE focal point */}
+            <motion.a
+              href="tel:5402390440"
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.4, delay: 0.3 }}
+              className="inline-flex items-center gap-3 bg-primary-600 hover:bg-primary-700 text-white text-2xl md:text-3xl font-bold px-10 py-5 rounded-lg shadow-2xl shadow-primary-900/40 transition-all duration-200 hover:-translate-y-1 mb-6"
             >
-              <a href="tel:5402390440" className="btn-primary text-lg px-8 py-4">
-                <Phone className="mr-2 h-6 w-6" />
-                (540) 239-0440
-              </a>
-              <Link href="/contact" className="btn-secondary text-lg px-8 py-4">
-                Get a Free Estimate
-              </Link>
-            </motion.div>
-
-            {/* Trust badges */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.6, delay: 0.5 }}
-              className="flex flex-wrap items-center justify-center gap-6 pt-6 border-t border-white/20"
-            >
-              <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2">
-                <Award className="h-5 w-5 text-primary-400" />
-                <span className="text-sm font-medium">CSIA Certified</span>
-              </div>
-              <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2">
-                <Shield className="h-5 w-5 text-primary-400" />
-                <span className="text-sm font-medium">BBB Accredited</span>
-              </div>
-              <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2">
-                <CheckCircle className="h-5 w-5 text-primary-400" />
-                <span className="text-sm font-medium">48+ Years Experience</span>
-              </div>
-            </motion.div>
+              <Phone className="h-7 w-7 md:h-8 md:w-8" />
+              (540) 239-0440
+            </motion.a>
           </motion.div>
         </div>
       </section>
 
-      {/* CSIA Certification Banner */}
-      <section className="bg-primary-600 text-white py-6">
-        <div className="container-custom">
-          <div className="flex flex-col md:flex-row items-center justify-center gap-4 text-center">
-            <Award className="h-8 w-8 flex-shrink-0" />
-            <p className="text-lg font-semibold">
-              Proudly employing 3 CSIA Certified Chimney Sweep Professionals &mdash; Your safety is our top priority
-            </p>
+      {/* Trust strip */}
+      <section className="bg-warm-900 text-warm-50 py-5">
+        <div className="container-custom px-5">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-10 text-center">
+            <div className="flex items-center gap-2">
+              <Award className="h-5 w-5 text-primary-400" />
+              <span className="font-bold tracking-wide text-sm uppercase">CSIA Certified</span>
+            </div>
+            <div className="hidden md:block w-px h-5 bg-warm-700" />
+            <div className="flex items-center gap-2">
+              <Shield className="h-5 w-5 text-primary-400" />
+              <span className="font-bold tracking-wide text-sm uppercase">BBB Accredited</span>
+            </div>
+            <div className="hidden md:block w-px h-5 bg-warm-700" />
+            <div className="flex items-center gap-2">
+              <CheckCircle className="h-5 w-5 text-primary-400" />
+              <span className="font-bold tracking-wide text-sm uppercase">48+ Years Experience</span>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Services Section */}
-      <section className="bg-slate-50 section-padding">
+      {/* What We Do */}
+      <section className="bg-warm-50 section-padding">
         <div className="container-custom">
-          <FadeIn className="text-center max-w-2xl mx-auto mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
+          <FadeIn className="max-w-2xl mb-16">
+            <h2 className="heading text-4xl md:text-5xl lg:text-6xl text-warm-900 mb-4">
               What We Do
             </h2>
-            <p className="text-lg text-slate-600">
-              Professional chimney services you can trust
+            <p className="text-lg text-warm-600">
+              Professional chimney services you can trust.
             </p>
           </FadeIn>
 
           <FadeInStagger className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {services.map((service, index) => (
+            {services.map((service) => (
               <FadeInStaggerItem key={service.title}>
                 <HoverCard>
-                  <div className="bg-white rounded-3xl p-8 h-full shadow-sm hover:shadow-xl transition-shadow duration-500 shine-effect border border-slate-100">
-                    <div className="w-16 h-16 bg-gradient-to-br from-primary-500 to-primary-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-primary-500/25">
-                      <service.icon className="h-8 w-8 text-white" />
+                  <div className="bg-white rounded-xl p-8 h-full border border-warm-200 hover:border-primary-300 transition-colors duration-300">
+                    <div className="w-14 h-14 bg-primary-600 rounded-lg flex items-center justify-center mb-6">
+                      <service.icon className="h-7 w-7 text-white" />
                     </div>
-                    <h3 className="text-2xl font-bold text-slate-900 mb-3">{service.title}</h3>
-                    <p className="text-slate-600 mb-6 leading-relaxed">{service.description}</p>
+                    <h3 className="heading text-2xl text-warm-900 mb-3">{service.title}</h3>
+                    <p className="text-warm-600 mb-6 leading-relaxed">{service.description}</p>
                     <Link
                       href={service.href}
-                      className="inline-flex items-center text-primary-600 font-semibold group"
+                      className="inline-flex items-center text-primary-700 font-bold group"
                     >
                       Learn more
                       <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
@@ -168,29 +137,22 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Testimonial Section */}
-      <section className="bg-white section-padding overflow-hidden">
-        <div className="container-custom">
+      {/* Testimonial */}
+      <section className="relative bg-warm-900 text-white section-padding grain overflow-hidden">
+        <div className="container-custom relative z-10">
           <FadeIn>
-            <div className="max-w-4xl mx-auto text-center">
-              <div className="inline-flex items-center gap-2 bg-primary-50 rounded-full px-4 py-2 mb-8">
-                <span className="text-sm text-primary-600 font-medium">What People Are Saying</span>
-              </div>
-
-              <div className="relative">
-                <Quote className="absolute -top-4 -left-4 h-20 w-20 text-primary-100" />
-                <blockquote className="relative text-3xl md:text-4xl font-medium text-slate-900 mb-8 leading-relaxed">
-                  &ldquo;Superb product and customer service!&rdquo;
-                </blockquote>
-              </div>
-
+            <div className="max-w-3xl mx-auto text-center">
+              <Quote className="h-16 w-16 text-primary-500/30 mx-auto mb-6" />
+              <blockquote className="heading text-3xl md:text-4xl lg:text-5xl text-white mb-8 leading-tight">
+                &ldquo;Superb product and customer service!&rdquo;
+              </blockquote>
               <div className="flex items-center justify-center gap-4">
-                <div className="w-12 h-12 bg-gradient-to-br from-primary-500 to-primary-600 rounded-full flex items-center justify-center text-white font-bold">
+                <div className="w-12 h-12 bg-primary-600 rounded-full flex items-center justify-center text-white font-bold">
                   JM
                 </div>
                 <div className="text-left">
-                  <p className="font-semibold text-slate-900">Jo Mulligan</p>
-                  <p className="text-slate-500 text-sm">Blacksburg, VA</p>
+                  <p className="font-bold text-warm-100">Jo Mulligan</p>
+                  <p className="text-warm-400 text-sm">Blacksburg, VA</p>
                 </div>
               </div>
             </div>
@@ -198,31 +160,20 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="relative bg-slate-900 text-white section-padding overflow-hidden">
-        <div className="absolute inset-0">
-          <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary-500/20 rounded-full blur-3xl" />
-          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-primary-600/10 rounded-full blur-3xl" />
-        </div>
-
-        <div className="container-custom relative">
-          <FadeIn className="text-center max-w-3xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Quality Work{' '}
-              <span className="gradient-text">Guaranteed</span>
+      {/* CTA */}
+      <section className="bg-primary-600 text-white section-padding relative grain overflow-hidden">
+        <div className="container-custom relative z-10 text-center">
+          <FadeIn>
+            <h2 className="heading text-4xl md:text-5xl lg:text-6xl mb-4">
+              Quality Work Guaranteed
             </h2>
-            <p className="text-lg text-slate-300 mb-2">
-              CSIA Certified &bull; BBB Accredited &bull; 48+ Years Experience
+            <p className="text-primary-100 text-lg mb-10 max-w-xl mx-auto">
+              CSIA Certified &bull; BBB Accredited &bull; Serving the New River Valley
             </p>
-            <p className="text-xl text-slate-400 mb-10">
-              Contact us anytime for more information.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="tel:5402390440" className="btn-primary">
-                <Phone className="mr-2 h-5 w-5" />
-                (540) 239-0440
-              </a>
-            </div>
+            <a href="tel:5402390440" className="inline-flex items-center gap-3 bg-white text-warm-900 text-xl md:text-2xl font-bold px-10 py-5 rounded-lg shadow-xl hover:shadow-2xl transition-all duration-200 hover:-translate-y-1">
+              <Phone className="h-6 w-6" />
+              (540) 239-0440
+            </a>
           </FadeIn>
         </div>
       </section>

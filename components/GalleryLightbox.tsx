@@ -39,7 +39,7 @@ export default function GalleryLightbox({ photos }: GalleryLightboxProps) {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: index * 0.05 }}
             whileHover={{ scale: 1.03 }}
-            className="aspect-square relative overflow-hidden rounded-xl bg-slate-100 cursor-pointer group"
+            className="aspect-square relative overflow-hidden rounded-lg bg-warm-100 cursor-pointer group"
             onClick={() => openLightbox(index)}
           >
             <Image
@@ -52,7 +52,7 @@ export default function GalleryLightbox({ photos }: GalleryLightboxProps) {
             <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
             <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
               <div className="w-12 h-12 bg-white/90 rounded-full flex items-center justify-center">
-                <svg className="w-6 h-6 text-slate-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg className="w-6 h-6 text-warm-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
                 </svg>
               </div>

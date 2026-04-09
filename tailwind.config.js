@@ -6,6 +6,10 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['var(--font-dm-sans)', 'system-ui', 'sans-serif'],
+        display: ['var(--font-bitter)', 'Georgia', 'serif'],
+      },
       colors: {
         primary: {
           50: '#fef7ee',
@@ -19,9 +23,19 @@ module.exports = {
           800: '#903817',
           900: '#743016',
         },
-        slate: {
-          850: '#1a2332',
-        }
+        warm: {
+          50: '#faf8f5',
+          100: '#f5f0ea',
+          200: '#e8e0d4',
+          300: '#d4c8b8',
+          400: '#b8a68e',
+          500: '#9c876a',
+          600: '#7c6a52',
+          700: '#5c4f3d',
+          800: '#3d3529',
+          900: '#1c1917',
+          950: '#0f0d0a',
+        },
       },
     },
   },

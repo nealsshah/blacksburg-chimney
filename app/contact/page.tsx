@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Phone, MapPin, Shield, CheckCircle } from 'lucide-react'
+import { Phone, MapPin, Shield, CheckCircle, Award } from 'lucide-react'
 import { FadeIn } from '@/components/animations'
 
 const serviceAreas = [
@@ -20,26 +20,18 @@ const serviceAreas = [
 export default function ContactPage() {
   return (
     <>
-      {/* Hero Section */}
-      <section className="relative animated-gradient text-white pt-32 pb-20 overflow-hidden">
-        <div className="absolute inset-0">
-          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-primary-500/20 rounded-full blur-3xl" />
-        </div>
-        <div className="container-custom section-padding relative">
+      {/* Hero */}
+      <section className="relative bg-warm-900 text-white pt-32 pb-16 grain overflow-hidden">
+        <div className="container-custom section-padding relative z-10">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="max-w-3xl"
+            transition={{ duration: 0.5 }}
           >
-            <div className="inline-flex items-center gap-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full px-5 py-2.5 mb-6">
-              <span className="text-sm text-slate-300 font-medium">Contact Us</span>
-            </div>
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-              Get In{' '}
-              <span className="gradient-text">Touch</span>
+            <h1 className="heading text-5xl md:text-6xl lg:text-7xl text-white mb-4">
+              Get In Touch
             </h1>
-            <p className="text-xl text-slate-400 leading-relaxed">
+            <p className="text-lg text-warm-400">
               Quality Work Guaranteed. Give us a call anytime.
             </p>
           </motion.div>
@@ -47,34 +39,33 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Section */}
-      <section className="bg-white section-padding">
+      <section className="bg-warm-50 section-padding">
         <div className="container-custom">
-          <div className="max-w-2xl mx-auto space-y-8">
+          <div className="max-w-2xl mx-auto space-y-6">
 
             {/* Phone CTA */}
             <FadeIn>
-              <motion.a
+              <a
                 href="tel:5402390440"
-                whileHover={{ x: 5 }}
-                className="flex items-center gap-4 bg-primary-50 border-2 border-primary-200 p-6 rounded-2xl hover:bg-primary-100 transition-colors group"
+                className="flex items-center gap-5 bg-white border-2 border-warm-200 p-6 rounded-xl hover:border-primary-400 transition-colors group"
               >
-                <div className="w-16 h-16 bg-gradient-to-br from-primary-500 to-primary-600 rounded-xl flex items-center justify-center shadow-lg shadow-primary-500/20 shrink-0">
+                <div className="w-16 h-16 bg-primary-600 rounded-lg flex items-center justify-center shrink-0">
                   <Phone className="h-7 w-7 text-white" />
                 </div>
                 <div>
-                  <p className="text-sm text-slate-500 mb-1">Call Us</p>
-                  <p className="text-2xl font-bold text-primary-600 group-hover:text-primary-700 transition-colors">
+                  <p className="text-sm text-warm-500 mb-1 font-medium">Call Us</p>
+                  <p className="text-2xl font-bold text-warm-900 group-hover:text-primary-700 transition-colors">
                     (540) 239-0440
                   </p>
                 </div>
-              </motion.a>
+              </a>
             </FadeIn>
 
             {/* Service Areas */}
             <FadeIn delay={0.1}>
-              <div className="bg-slate-50 rounded-2xl p-6">
-                <h3 className="font-semibold text-slate-900 mb-4 flex items-center gap-2">
-                  <MapPin className="h-5 w-5 text-primary-500" />
+              <div className="bg-white rounded-xl p-6 border border-warm-200">
+                <h3 className="heading text-lg text-warm-900 mb-4 flex items-center gap-2">
+                  <MapPin className="h-5 w-5 text-primary-600" />
                   Areas We Serve
                 </h3>
                 <div className="grid grid-cols-2 gap-2">
@@ -87,8 +78,8 @@ export default function ContactPage() {
                       transition={{ delay: index * 0.03 }}
                       className="flex items-center gap-2"
                     >
-                      <CheckCircle className="h-4 w-4 text-primary-500" />
-                      <span className="text-sm text-slate-600">{area}</span>
+                      <CheckCircle className="h-4 w-4 text-primary-600" />
+                      <span className="text-sm text-warm-700">{area}</span>
                     </motion.div>
                   ))}
                 </div>
@@ -97,21 +88,23 @@ export default function ContactPage() {
 
             {/* Trust Badges */}
             <FadeIn delay={0.2}>
-              <div className="flex flex-wrap gap-3">
-                <motion.div
-                  whileHover={{ scale: 1.05 }}
-                  className="flex items-center gap-2 bg-primary-50 px-4 py-2.5 rounded-full"
-                >
-                  <Shield className="h-5 w-5 text-primary-600" />
-                  <span className="text-sm font-medium text-primary-700">CSIA Certified</span>
-                </motion.div>
-                <motion.div
-                  whileHover={{ scale: 1.05 }}
-                  className="flex items-center gap-2 bg-slate-100 px-4 py-2.5 rounded-full"
-                >
-                  <Shield className="h-5 w-5 text-slate-600" />
-                  <span className="text-sm font-medium text-slate-700">BBB Accredited</span>
-                </motion.div>
+              <div className="bg-warm-900 rounded-xl p-6 grain relative overflow-hidden">
+                <div className="relative z-10 flex flex-col sm:flex-row gap-4">
+                  <div className="flex items-center gap-3 flex-1">
+                    <Award className="h-6 w-6 text-primary-400 flex-shrink-0" />
+                    <div>
+                      <p className="text-white font-bold text-sm">CSIA Certified</p>
+                      <p className="text-warm-400 text-xs">3 Certified Professionals</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-3 flex-1">
+                    <Shield className="h-6 w-6 text-primary-400 flex-shrink-0" />
+                    <div>
+                      <p className="text-white font-bold text-sm">BBB Accredited</p>
+                      <p className="text-warm-400 text-xs">Trusted Business</p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </FadeIn>
 

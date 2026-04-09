@@ -23,56 +23,46 @@ const photos = [
 export default function GalleryPage() {
   return (
     <>
-      {/* Hero Section */}
-      <section className="relative animated-gradient text-white pt-32 pb-20 overflow-hidden">
-        <div className="absolute inset-0">
-          <div className="absolute top-1/2 -left-20 w-72 h-72 bg-primary-500/20 rounded-full blur-3xl" />
-        </div>
-        <div className="container-custom section-padding relative">
+      {/* Hero */}
+      <section className="relative bg-warm-900 text-white pt-32 pb-16 grain overflow-hidden">
+        <div className="container-custom section-padding relative z-10">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="max-w-3xl"
+            transition={{ duration: 0.5 }}
           >
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-              <span className="gradient-text">Gallery</span>
+            <h1 className="heading text-5xl md:text-6xl lg:text-7xl text-white mb-4">
+              Gallery
             </h1>
-            <p className="text-xl text-slate-400 leading-relaxed">
-              A collection of photographs showcasing our work for local customers in your neighborhood.
+            <p className="text-lg text-warm-400 max-w-xl">
+              Photos of our work for customers across the New River Valley.
             </p>
           </motion.div>
         </div>
       </section>
 
       {/* Gallery Grid */}
-      <section className="bg-white section-padding">
+      <section className="bg-warm-50 section-padding">
         <div className="container-custom">
           <GalleryLightbox photos={photos} />
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="bg-slate-50 section-padding">
+      {/* CTA */}
+      <section className="bg-warm-100 section-padding">
         <div className="container-custom">
           <FadeIn>
-            <div className="relative max-w-3xl mx-auto">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary-500 to-primary-600 rounded-3xl blur-2xl opacity-20" />
-              <div className="relative bg-white rounded-3xl p-10 text-center shadow-sm border border-slate-100">
-                <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-                  Quality Work{' '}
-                  <span className="gradient-text">Guaranteed</span>
-                </h2>
-                <p className="text-slate-600 mb-8 text-lg">
-                  Contact us anytime for more information.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <a href="tel:5402390440" className="btn-primary">
-                    <Phone className="mr-2 h-5 w-5" />
-                    (540) 239-0440
-                  </a>
-                </div>
-              </div>
+            <div className="max-w-3xl mx-auto bg-white rounded-xl p-10 text-center border border-warm-200">
+              <h2 className="heading text-3xl md:text-4xl text-warm-900 mb-4">
+                Quality Work Guaranteed
+              </h2>
+              <p className="text-warm-600 mb-8 text-lg">
+                Contact us anytime for more information.
+              </p>
+              <a href="tel:5402390440" className="btn-primary">
+                <Phone className="mr-2 h-5 w-5" />
+                (540) 239-0440
+              </a>
             </div>
           </FadeIn>
         </div>

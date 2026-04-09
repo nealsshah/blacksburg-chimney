@@ -7,33 +7,33 @@ html {
 }
 
 body {
-  @apply antialiased bg-white;
+  @apply antialiased bg-warm-50 text-warm-900;
 }
 
-/* Smooth scrollbar */
+/* Scrollbar */
 ::-webkit-scrollbar {
   width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-slate-100;
+  @apply bg-warm-100;
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-slate-300 rounded-full;
+  @apply bg-warm-300 rounded-full;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  @apply bg-slate-400;
+  @apply bg-warm-400;
 }
 
 @layer components {
   .btn-primary {
-    @apply inline-flex items-center justify-center px-7 py-3.5 bg-primary-600 text-white font-semibold rounded-full hover:bg-primary-500 transition-all duration-300 shadow-lg shadow-primary-600/25 hover:shadow-xl hover:shadow-primary-600/30 hover:-translate-y-0.5;
+    @apply inline-flex items-center justify-center px-8 py-4 bg-primary-600 text-white font-bold rounded-lg hover:bg-primary-700 transition-all duration-200 shadow-lg shadow-primary-900/20 hover:shadow-xl hover:-translate-y-0.5 tracking-wide;
   }
 
   .btn-secondary {
-    @apply inline-flex items-center justify-center px-7 py-3.5 bg-white text-slate-800 font-semibold rounded-full border-2 border-slate-200 hover:border-primary-500 hover:text-primary-600 transition-all duration-300 hover:-translate-y-0.5;
+    @apply inline-flex items-center justify-center px-8 py-4 bg-warm-900 text-warm-50 font-bold rounded-lg border-2 border-warm-900 hover:bg-transparent hover:text-warm-900 transition-all duration-200 tracking-wide;
   }
 
   .section-padding {
@@ -44,104 +44,35 @@ body {
     @apply max-w-7xl mx-auto;
   }
 
-  /* Glass morphism card */
-  .glass-card {
-    @apply bg-white/70 backdrop-blur-xl border border-white/20 shadow-xl;
-  }
-
-  /* Gradient text */
+  /* Warm gradient text — fire tones */
   .gradient-text {
     @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-500 to-primary-700;
   }
 
-  /* Animated underline */
-  .animated-underline {
-    @apply relative;
-  }
-
-  .animated-underline::after {
-    content: '';
-    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-primary-500 transition-all duration-300;
-  }
-
-  .animated-underline:hover::after {
-    @apply w-full;
-  }
-
-  /* Glow effect */
-  .glow {
-    @apply relative;
-  }
-
-  .glow::before {
-    content: '';
-    @apply absolute -inset-1 bg-gradient-to-r from-primary-500 to-primary-600 rounded-full blur opacity-0 transition-opacity duration-300;
-  }
-
-  .glow:hover::before {
-    @apply opacity-30;
+  /* Heading utility */
+  .heading {
+    @apply font-display font-bold tracking-tight;
   }
 }
 
-/* Animated gradient background */
-@keyframes gradient-shift {
-  0%, 100% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
+/* Warm dark background for hero sections */
+.warm-dark {
+  background-color: #1c1917;
 }
 
-.animated-gradient {
-  background: linear-gradient(-45deg, #0f172a, #1e293b, #334155, #1e293b);
-  background-size: 400% 400%;
-  animation: gradient-shift 15s ease infinite;
-}
-
-/* Subtle floating animation */
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-}
-
-.float {
-  animation: float 6s ease-in-out infinite;
-}
-
-/* Pulse glow */
-@keyframes pulse-glow {
-  0%, 100% {
-    box-shadow: 0 0 20px rgba(233, 115, 22, 0.3);
-  }
-  50% {
-    box-shadow: 0 0 40px rgba(233, 115, 22, 0.5);
-  }
-}
-
-.pulse-glow {
-  animation: pulse-glow 3s ease-in-out infinite;
-}
-
-/* Card hover shine effect */
-.shine-effect {
-  @apply relative overflow-hidden;
-}
-
-.shine-effect::before {
+/* Subtle grain texture overlay */
+.grain::after {
   content: '';
-  @apply absolute top-0 -left-full w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-12 transition-all duration-700;
-}
-
-.shine-effect:hover::before {
-  @apply left-full;
+  position: absolute;
+  inset: 0;
+  opacity: 0.04;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 256px 256px;
 }
 
 /* Selection color */
 ::selection {
-  @apply bg-primary-500/30 text-slate-900;
+  @apply bg-primary-300/40 text-warm-900;
 }
