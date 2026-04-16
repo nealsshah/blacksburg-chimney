@@ -1,8 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Phone, MapPin, Shield, CheckCircle, Award } from 'lucide-react'
-import { FadeIn } from '@/components/animations'
+import { Phone, MapPin, Award, Shield } from 'lucide-react'
 
 const serviceAreas = [
   'Blacksburg',
@@ -20,94 +19,143 @@ const serviceAreas = [
 export default function ContactPage() {
   return (
     <>
-      {/* Hero */}
-      <section className="relative bg-warm-900 text-white pt-32 pb-16 grain overflow-hidden">
+      {/* Hero — phone number IS the headline */}
+      <section className="relative bg-warm-900 text-white pt-32 pb-24 overflow-hidden grain">
+        {/* Diagonal accent */}
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background:
+              'linear-gradient(108deg, transparent 55%, rgba(218,93,20,0.09) 55%, rgba(218,93,20,0.09) 100%)',
+          }}
+        />
+
         <div className="container-custom section-padding relative z-10">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.55, ease: [0.21, 0.47, 0.32, 0.98] }}
           >
-            <h1 className="heading text-5xl md:text-6xl lg:text-7xl text-white mb-4">
-              Get In Touch
-            </h1>
-            <p className="text-lg text-warm-400">
-              Quality Work Guaranteed. Give us a call anytime.
+            <p className="text-primary-400 font-semibold tracking-[0.28em] uppercase text-xs mb-6">
+              Reach Us
             </p>
+
+            {/* Phone as display headline */}
+            <a
+              href="tel:5402390440"
+              className="block group"
+              aria-label="Call (540) 239-0440"
+            >
+              <div
+                className="font-display font-black text-white leading-none group-hover:text-primary-400 transition-colors duration-300"
+                style={{ fontSize: 'clamp(2.6rem, 8.5vw, 7rem)' }}
+              >
+                (540)
+              </div>
+              <div
+                className="font-display font-black text-primary-500 leading-none group-hover:text-primary-400 transition-colors duration-300"
+                style={{ fontSize: 'clamp(2.6rem, 8.5vw, 7rem)' }}
+              >
+                239-0440
+              </div>
+            </a>
+
+            <p className="text-warm-300 text-base mt-8 max-w-xs leading-relaxed">
+              Quality work guaranteed. Give us a call anytime — we pick up.
+            </p>
+
+            {/* Visible tap-to-call on mobile */}
+            <motion.a
+              href="tel:5402390440"
+              whileHover={{ x: 4 }}
+              transition={{ duration: 0.2 }}
+              className="inline-flex items-center gap-3 mt-8 bg-primary-600 text-white font-bold px-8 py-4 hover:bg-primary-700 transition-colors duration-200"
+            >
+              <Phone className="h-5 w-5" />
+              Call Now
+            </motion.a>
           </motion.div>
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section className="bg-warm-50 section-padding">
-        <div className="container-custom">
-          <div className="max-w-2xl mx-auto space-y-6">
+      {/* Credentials bar */}
+      <section className="bg-primary-600 py-4">
+        <div className="container-custom section-padding">
+          <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-2">
+            <a
+              href="https://search.csia.org/company_profile/-blacksburg-chimney-servicesalan-the-chimney-swift"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-white font-bold text-xs tracking-[0.22em] uppercase hover:text-primary-100 transition-colors"
+            >
+              <Award className="h-3.5 w-3.5" />
+              3× CSIA Certified
+            </a>
+            <span className="text-primary-400 hidden md:block text-xs">—</span>
+            <a
+              href="https://www.bbb.org/us/va/roanoke/profile/chimney-cleaning/blacksburg-chimney-services-alan-the-chimney-swift-0613-9009080"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-white font-bold text-xs tracking-[0.22em] uppercase hover:text-primary-100 transition-colors"
+            >
+              <Shield className="h-3.5 w-3.5" />
+              BBB Accredited
+            </a>
+            <span className="text-primary-400 hidden md:block text-xs">—</span>
+            <span className="text-white font-bold text-xs tracking-[0.22em] uppercase">
+              48 Years in Business
+            </span>
+          </div>
+        </div>
+      </section>
 
-            {/* Phone CTA */}
-            <FadeIn>
-              <a
-                href="tel:5402390440"
-                className="flex items-center gap-5 bg-white border-2 border-warm-200 p-6 rounded-xl hover:border-primary-400 transition-colors group"
+      {/* Service Areas */}
+      <section className="bg-warm-50 py-20">
+        <div className="container-custom section-padding">
+          <div className="grid lg:grid-cols-[1fr_1.6fr] gap-16 items-start">
+
+            {/* Left: heading */}
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.55, ease: [0.21, 0.47, 0.32, 0.98] }}
+            >
+              <p className="text-primary-500 text-xs font-semibold tracking-[0.28em] uppercase mb-4">
+                Coverage Area
+              </p>
+              <h2
+                className="font-display font-black text-warm-900 leading-tight mb-6"
+                style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)' }}
               >
-                <div className="w-16 h-16 bg-primary-600 rounded-lg flex items-center justify-center shrink-0">
-                  <Phone className="h-7 w-7 text-white" />
-                </div>
-                <div>
-                  <p className="text-sm text-warm-500 mb-1 font-medium">Call Us</p>
-                  <p className="text-2xl font-bold text-warm-900 group-hover:text-primary-700 transition-colors">
-                    (540) 239-0440
-                  </p>
-                </div>
-              </a>
-            </FadeIn>
+                Where
+                <br />
+                We Serve
+              </h2>
+              <p className="text-warm-500 text-sm leading-relaxed max-w-xs">
+                Serving the New River Valley and surrounding counties in Southwest Virginia.
+              </p>
+            </motion.div>
 
-            {/* Service Areas */}
-            <FadeIn delay={0.1}>
-              <div className="bg-white rounded-xl p-6 border border-warm-200">
-                <h3 className="heading text-lg text-warm-900 mb-4 flex items-center gap-2">
-                  <MapPin className="h-5 w-5 text-primary-600" />
-                  Areas We Serve
-                </h3>
-                <div className="grid grid-cols-2 gap-2">
-                  {serviceAreas.map((area, index) => (
-                    <motion.div
-                      key={area}
-                      initial={{ opacity: 0 }}
-                      whileInView={{ opacity: 1 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: index * 0.03 }}
-                      className="flex items-center gap-2"
-                    >
-                      <CheckCircle className="h-4 w-4 text-primary-600" />
-                      <span className="text-sm text-warm-700">{area}</span>
-                    </motion.div>
-                  ))}
+            {/* Right: typographic list, no containers */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.55, delay: 0.1, ease: [0.21, 0.47, 0.32, 0.98] }}
+              className="grid grid-cols-2"
+            >
+              {serviceAreas.map((area) => (
+                <div
+                  key={area}
+                  className="flex items-center gap-3 border-b border-warm-200 py-3.5"
+                >
+                  <MapPin className="h-3.5 w-3.5 text-primary-400 shrink-0" />
+                  <span className="text-warm-700 font-medium text-sm">{area}</span>
                 </div>
-              </div>
-            </FadeIn>
-
-            {/* Trust Badges */}
-            <FadeIn delay={0.2}>
-              <div className="bg-warm-900 rounded-xl p-6 grain relative overflow-hidden">
-                <div className="relative z-10 flex flex-col sm:flex-row gap-4">
-                  <a href="https://search.csia.org/company_profile/-blacksburg-chimney-servicesalan-the-chimney-swift" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 flex-1 hover:opacity-80 transition-opacity">
-                    <Award className="h-6 w-6 text-primary-400 flex-shrink-0" />
-                    <div>
-                      <p className="text-white font-bold text-sm">CSIA Certified</p>
-                      <p className="text-warm-400 text-xs">3 Certified Professionals</p>
-                    </div>
-                  </a>
-                  <a href="https://www.bbb.org/us/va/roanoke/profile/chimney-cleaning/blacksburg-chimney-services-alan-the-chimney-swift-0613-9009080" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 flex-1 hover:opacity-80 transition-opacity">
-                    <Shield className="h-6 w-6 text-primary-400 flex-shrink-0" />
-                    <div>
-                      <p className="text-white font-bold text-sm">BBB Accredited</p>
-                      <p className="text-warm-400 text-xs">Trusted Business</p>
-                    </div>
-                  </a>
-                </div>
-              </div>
-            </FadeIn>
-
+              ))}
+            </motion.div>
           </div>
         </div>
       </section>
