@@ -32,9 +32,11 @@ export default function Header() {
       animate={{ y: 0 }}
       transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? 'bg-warm-900/95 backdrop-blur-md shadow-lg shadow-warm-950/20'
-          : 'bg-transparent'
+        mobileMenuOpen
+          ? 'bg-warm-900'
+          : scrolled
+            ? 'bg-warm-900/95 backdrop-blur-md shadow-lg shadow-warm-950/20'
+            : 'bg-transparent'
       }`}
     >
       <nav className="container-custom flex items-center justify-between p-4 lg:px-8">
