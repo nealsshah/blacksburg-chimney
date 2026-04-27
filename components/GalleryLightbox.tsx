@@ -11,6 +11,7 @@ interface GalleryLightboxProps {
 
 export default function GalleryLightbox({ photos }: GalleryLightboxProps) {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null)
+  const [touchStart, setTouchStart] = useState<number | null>(null)
 
   const openLightbox = (index: number) => setSelectedIndex(index)
   const closeLightbox = () => setSelectedIndex(null)
@@ -72,6 +73,16 @@ export default function GalleryLightbox({ photos }: GalleryLightboxProps) {
             transition={{ duration: 0.2 }}
             className="fixed inset-0 z-50 flex items-center justify-center bg-warm-950/97"
             onClick={closeLightbox}
+            onTouchStart={(e) => setTouchStart(e.touches[0].clientX)}
+            onTouchEnd={(e) => {
+              if (touchStart === null) return
+              const diff = e.changedTouches[0].clientX - touchStart
+              if (Math.abs(diff) > 50) {
+                if (diff > 0) goToPrevious()
+                else goToNext()
+              }
+              setTouchStart(null)
+            }}
           >
             {/* Close */}
             <button

@@ -81,7 +81,7 @@ export default function ContactPage() {
 
       {/* Credentials bar */}
       <section className="bg-primary-600 py-4">
-        <div className="container-custom section-padding">
+        <div className="container-custom px-5 md:px-8">
           <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-2">
             <a
               href="https://search.csia.org/company_profile/-blacksburg-chimney-servicesalan-the-chimney-swift"
@@ -111,7 +111,7 @@ export default function ContactPage() {
       </section>
 
       {/* Service Areas */}
-      <section className="bg-warm-50 py-20">
+      <section className="bg-warm-50">
         <div className="container-custom section-padding">
           <div className="grid lg:grid-cols-[1fr_1.6fr] gap-16 items-start">
 
@@ -144,7 +144,7 @@ export default function ContactPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.55, delay: 0.1, ease: [0.21, 0.47, 0.32, 0.98] }}
-              className="grid grid-cols-2"
+              className="grid grid-cols-1 sm:grid-cols-2"
             >
               {serviceAreas.map((area) => (
                 <div

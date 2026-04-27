@@ -81,7 +81,7 @@ export default function GalleryPage() {
       </section>
 
       {/* CTA */}
-      <section className="bg-primary-600 text-white py-20 relative overflow-hidden grain">
+      <section className="bg-primary-600 text-white relative overflow-hidden grain">
         <div className="container-custom section-padding relative z-10 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

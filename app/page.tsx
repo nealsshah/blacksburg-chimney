@@ -97,7 +97,7 @@ export default function Home() {
 
       {/* Credentials bar — consistent with all other pages */}
       <section className="bg-primary-600 py-4">
-        <div className="container-custom section-padding">
+        <div className="container-custom px-5 md:px-8">
           <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-2">
             <a
               href="https://search.csia.org/company_profile/-blacksburg-chimney-servicesalan-the-chimney-swift"
@@ -125,7 +125,7 @@ export default function Home() {
       </section>
 
       {/* What We Do — editorial numbered rows, no cards */}
-      <section className="bg-warm-50 py-20">
+      <section className="bg-warm-50">
         <div className="container-custom section-padding">
           <div className="grid lg:grid-cols-[1fr_1.6fr] gap-16 items-start">
 
@@ -201,7 +201,7 @@ export default function Home() {
       </section>
 
       {/* CTA */}
-      <section className="bg-primary-600 text-white py-20 relative overflow-hidden grain">
+      <section className="bg-primary-600 text-white relative overflow-hidden grain">
         <div className="container-custom section-padding relative z-10 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

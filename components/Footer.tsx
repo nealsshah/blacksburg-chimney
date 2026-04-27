@@ -107,7 +107,7 @@ export default function Footer() {
                   <div className="w-10 h-10 bg-warm-800 rounded-lg flex items-center justify-center group-hover:bg-primary-600 transition-colors">
                     <Mail className="h-4 w-4 text-primary-500 group-hover:text-white transition-colors" />
                   </div>
-                  <span className="break-all">info@blacksburgchimneyservices.net</span>
+                  <span className="break-words">info@blacksburgchimneyservices.net</span>
                 </a>
               </li>
               <li className="flex items-start gap-3 text-warm-400 text-sm">

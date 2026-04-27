@@ -67,7 +67,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Services — numbered editorial list */}
-      <section className="bg-warm-50 py-16">
+      <section className="bg-warm-50">
         <div className="container-custom section-padding">
           <div className="max-w-2xl">
             {services.map((service, index) => (
@@ -178,7 +178,7 @@ export default function ServicesPage() {
       </motion.section>
 
       {/* CTA */}
-      <section className="bg-primary-600 text-white py-20 relative overflow-hidden grain">
+      <section className="bg-primary-600 text-white relative overflow-hidden grain">
         <div className="container-custom section-padding relative z-10 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
